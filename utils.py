@@ -1,5 +1,3 @@
-import random
-
 
 def compare(p1, p2):
 
