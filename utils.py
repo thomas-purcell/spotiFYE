@@ -28,6 +28,12 @@ def compare(p1, p2):
 
             for artist2 in t2.artists:
                 p2_artists.add(artist2)
+                if artist2 in p1_artists:
+                    if t1.album_cover not in urls:
+                        urls.add(t1.album_cover)
+
+                    if t2.album_cover not in urls:
+                        urls.add(t2.album_cover)
 
             if t1.album == t2.album:
 
