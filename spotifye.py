@@ -1,3 +1,4 @@
+import config
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from track import Track
@@ -25,8 +26,8 @@ def build_playlist(playlist, sp):
 
 
 def analyze_user():
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="50aed94f72d4414cafa02eda20c45457",
-                                                   client_secret="0ce320e6442c4e289b3b35d146f8de17",
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=config.spotify_id,
+                                                   client_secret=config.spotify_secret,
                                                    redirect_uri="http://localhost:8080",
                                                    scope="user-read-recently-played, user-top-read"))
 
