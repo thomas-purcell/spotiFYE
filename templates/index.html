@@ -20,21 +20,18 @@
 
 <body class="container">
   <h1>spotiFYE</h1>
-  <p>Here are the stats: {{stats}}</p>
-  <p>Here are the stats['stats']: {{stats['stats']}}</p>
     {% for stat in stats['stats'] %}
     <div class="col-md-6">
-      <div class="card">  
-        <p>I'm showing a stat! The stat is: {{ stat }}</p>
+      <div class="card">
         <img src="{{ stat['url'] }}" class="card-img-top" height="300px"> 
         <h2 class ="card-title">{{ stat['statname'] }}: {{ stat['percentage'] }}</h2>
         <div class="card-body"> 
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width:{{ stat['percentage'] }};" aria-valuenow="{{ stat['percentage'] }} " aria-valuemin="0" aria-valuemax="100">{{ stat['percentage'] }}</div> 
+            <div class="progress-bar" role="progressbar" style="width:{{ stat['percentage'] }};" aria-valuenow="{{ stat['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
           </div>
           {% for song_str in stat['strings'] %}
           <li>
-            song_str
+            {{ song_str }}
           </li>
           {% endfor %}
         </div>
