@@ -39,13 +39,10 @@ def analyze_user():
     title_count, artist_count, total_artists, album_count, genre_count, total_genres, titles, artists, albums, genres, \
         urls = compare(short_term, long_term)
 
-    print(genre_count)
-    print(total_genres)
-
-    title_percent = str(round(title_count / 50 * 100, 2)) + "%"
-    artist_percent = str(round(artist_count / total_artists * 100, 2)) + "%"
-    album_percent = str(round(album_count / 50 * 100, 2)) + "%"
-    genre_percent = str(round(genre_count / total_genres * 100, 2)) + "%"
+    title_percent = round(title_count / 50 * 100)
+    artist_percent = round(artist_count / total_artists * 100)
+    album_percent = round(album_count / 50 * 100)
+    genre_percent = round(genre_count / total_genres * 100)
 
     return build_json(title_percent, artist_percent, album_percent, genre_percent,
                       titles, artists, albums, genres, urls)
