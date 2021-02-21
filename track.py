@@ -12,8 +12,8 @@ class Track(object):
 
     def __repr__(self):
         return [self.song, self.song_id, self.artist, self.artist_id,
-                self.album, self.album_id, self.genres, self.album_cover].__str__()
+                self.album, self.album_id, self.genres, self.total_genres, self.album_cover].__str__()
 
     def __str__(self):
         return [self.song, self.song_id, self.artist, self.artist_id,
-                self.album, self.album_id, self.genres, self.album_cover].__str__()
+                self.album, self.album_id, self.genres, self.total_genres, self.album_cover].__str__()
