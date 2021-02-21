@@ -32,10 +32,9 @@ Now, we had pretty much a working project. You launch the webapp, log in to your
 some stats of what you share in common with the Top 50 in the US. Now, we decided to pivot and try making it compare
 your last month of listening to your last year of listening. I personally had been staring at a laptop screen for like
 12 hours straight at this point (very illegal), so I kind of fell asleep while that happened, but I woke up and it
-looked great, so yeah good job team we did good. We learned a bunch about using APIs, making Flask apps, making HTML and
-templates, and connecting front and back end components. There's probably not much in the future of spotiFYE, but it
-would've been nice to get a progess bar that actually worked correctly every time and maybe add in some new modes of
-comparisons (but that would require front end sending information to back end which seemed too big of a scope
-for a weekend).
+looked great, so yeah good job team we did good. We learned a bunch about using APIs, making Flask apps, making HTML and 
+templates, and connecting front and back end components. There's probably not much in the future of spotiFYE, but it 
+would've been nice to get a progess bar that actually worked correctly every time and maybe add in some new modes of 
+comparisons (but that would require front end sending information to back end which seemed too big of a scope for a weekend).
 
 --Jay
