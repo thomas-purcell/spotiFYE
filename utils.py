@@ -58,29 +58,24 @@ def compare(p1, p2):
 
 
 def build_json(title_percent, artist_percent, album_percent, genre_percent, titles, artists, albums, genres, urls):
-    result = "{ \"stats\": ["
+    result = {"stats": []}
     names = ["Song Similarities", "Artist Similarities", "Album Similarities", "Genre Similarities"]
     percents = [title_percent, artist_percent, album_percent, genre_percent]
     dicts = [titles, artists, albums, genres]
     for idx in range(4):
-        result += "{ \"statname\": \"" + names[idx] + "\", "
-        result += "\"percentage\": \"" + percents[idx] + "\", "
+        stat = {}
+        stat.update({"statname": names[idx]})
+        stat.update({"percentage": percents[idx]})
         if len(urls) == 0:
-            result += "\"url\": \"" + \
-                      "https://cdn.discordapp.com/attachments/812710788476305429/812834007473586196/default.png" \
-                      + "\", "
+            stat.update({"url": "https://cdn.discordapp.com/attachments/812710788476305429/812834007473586196/default.png"})
         elif len(urls) == 1:
             cover = list(urls)
-            result += "\"url\": \"" + cover[0] + "\", "
+            stat.update({"url": cover[0]})
         else:
-            result += "\"url\": \"" + urls.pop() + "\", "
-        strings = "["
+            stat.update({"url": urls.pop()})
+        strings = []
         for item in dicts[idx].keys():
-            strings += "\"" + item + "\", "
-        if strings == "[":
-            strings = "[ ] "
-        else:
-            strings = strings[0:len(strings) - 2] + "] "
-        result += "\"strings\": " + strings
-        result += "}, "
-    return result[0:len(result) - 2] + " ] }"
+            strings.append(item)
+        stat.update({"strings": strings})
+        result['stats'].append(stat)
+    return result
