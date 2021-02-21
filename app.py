@@ -1,7 +1,4 @@
 from flask import Flask, render_template
-import spotipy as spotipy
-import os
-from spotipy.oauth2 import SpotifyOAuth
 import spotifye
 
 app = Flask(__name__)
