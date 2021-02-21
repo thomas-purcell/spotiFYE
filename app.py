@@ -9,8 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     json = spotifye.analyze_user()
-    html = render_template('homepage.html', stats=json)
-    return html
+    return render_template('index.html', stats=json)
 
 if __name__ == '__main__':
     app.run(use_reloader=True, debug=True)
