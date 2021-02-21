@@ -1,0 +1,37 @@
+We began the weekend by forming a team and getting a general idea. Once we settled on using the Spotify API to try to do
+some sort of user analysis or track comparison, we had to figure out how we were actually going to do that. A lot of us
+had Python experience, so that felt like a natural choice for the backend, but we had practically zero front-end
+experience. At that point, we decided to go to office hours to try to figure out how in the world we could visualize
+everything once we got to that point.
+
+The first thing we wanted to try was React because it seemed like a lot of the mentors really wanted to shill for that.
+That worked on us for a bit and we were totally convinced we were going to learn React and somehow connect that to our
+Python backend. Eventually, we got a lot of our help from Sanders (for the back end) and Alex (for the front end).
+Sanders helped us through a lot of the initial learning process of the Spotify API and Alex spent probably two hours
+answering our questions about using Python Flask and Boostrap to have an integrated front end and back end framework.
+Not to speak for the rest of my group, but I don't think I've ever felt so overloaded with information in such a sort
+time span and my brain was legitimately fried by the end of that.
+
+After sleeping on that, we immediately narrowed in on the idea we wanted and then split into our respective teams to
+learn more about these tools we had never used before in our lives. On the front-end end of things, we quickly realized
+we had no idea what were doing after looking at Tri's Figma prototype (actually zero chance we could make something as
+nice looking as he envisioned) and trying to copy-paste a Flask/Bootstrap tutorial. We tried office hours again and
+Nabeel basically gave us a crash course on using HTML and how templates were actually Flask feature and not an HTML
+feature. I think most of the HTML we wrote in that session ended up in our final project. For the back end, we were
+able to a working Flask app and an almost working json production function (I'm not really sure Rachel and Thomas
+they did it, most likely magic).
+
+At this point, Jacob and I had a hard-coded HTML page and a couple of Python pieces, so we started trying to use some of
+the HTML Flask features to make it a bit less hard-coded. We kinda struggled through that a lot because it turns out we
+had the wrong file format ("psa json files arent strings" - Thomas). The three of us went to more office hours and
+Christina and Yugo walked us through producing something with a proper json format and using git on the command line.
+Also shoutout Christina for somehow getting us to do the right things completely blind and dealing with a mute
+(as in my mic crapped out two hours before that and screenshare hates us).
+
+Now, we had pretty much a working project. You launch the webapp, log in to your Spotify account, and it would tell you
+some stats of what you share in common with the Top 50 in the US. Now, we decided to pivot and try making it compare
+your last month of listening to your last year of listening. I personally had been staring at a laptop screen for like
+12 hours straight at this point (very illegal), so I kind of fell asleep while that happened, but I woke up and it
+looked great, so yeah good job team we did good.
+
+--Jay
