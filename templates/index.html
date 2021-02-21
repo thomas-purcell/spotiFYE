@@ -20,7 +20,7 @@
 
 <body class="container">
   <h1>spotiFYE</h1>
-    {% for idx in range(4) %} <!-- for i in range (0,10,2)-->
+    {% for idx in range(4) %}
       {% if idx % 2 == 0 %}
       <div class = "row">
         <div class="col-md-6">
@@ -47,7 +47,7 @@
             <h2 class ="card-title">{{ stats['stats'][idx]['statname'] }}: {{ stats['stats'][idx]['percentage'] }}</h2>
             <div class="card-body"> 
               <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width:{{ stats['stats'][idx]['percentage'] }};" aria-valuenow="{{ stats['stats'][idx]['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
+                <div class="progress-bar" role="progressbar" style="width:{{ stats['stats'][idx]['percentage'] }};" aria-valuenow="{{ stats['stats'][idx]['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
               {% for song_str in stats['stats'][idx]['strings'] %}
               <li>
