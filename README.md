@@ -8,6 +8,8 @@ Backend engineering was done by Thomas Purcell and Rachel Li. The Spotify API wa
 
 Frontend engineering was done by Jacob Nguyen, Jay Srinivasan, and Tri Watanasuparp. HTML and CSS scripts were written to design and develop the web application. Bootstrap was used to build components of the web application. 
 
+https://devpost.com/software/spotifye 
+
 ## The Process
 We began the weekend by forming a team and getting a general idea. Once we settled on using the Spotify API to try to do
 some sort of user analysis or track comparison, we had to figure out how we were actually going to do that. A lot of us
