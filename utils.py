@@ -82,7 +82,6 @@ def compare(p1, p2):
 
     total_artists = len(p1_artists) + len(p2_artists)
     total_genres = len(p1_genres) + len(p2_genres)
-    print(titles)
     return title_count, artist_count, total_artists, album_count, genre_count, total_genres, \
         titles, artists, albums, genres, urls
 
