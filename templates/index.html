@@ -1,7 +1,7 @@
-<!-- based on   -->
+{% include 'create.html' %}
 <!doctype html>
 <html>
-
+  
 <head>
   <title>spotiFYE</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -20,25 +20,45 @@
 
 <body class="container">
   <h1>spotiFYE</h1>
-    {% for stat in stats['stats'] %}
-    <div class="col-md-6">
-      <div class="card">
-        <img src="{{ stat['url'] }}" class="card-img-top" height="300px"> 
-        <h2 class ="card-title">{{ stat['statname'] }}: {{ stat['percentage'] }}</h2>
-        <div class="card-body"> 
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width:{{ stat['percentage'] }};" aria-valuenow="{{ stat['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
+    {% for idx in range(4) %} <!-- for i in range (0,10,2)-->
+      {% if idx % 2 == 0 %}
+      <div class = "row">
+        <div class="col-md-6">
+          <div class="card">
+            <img src="{{ stats['stats'][idx]['url'] }}" class="card-img-top" height="300px"> 
+            <h2 class ="card-title">{{ stats['stats'][idx]['statname'] }}: {{ stats['stats'][idx]['percentage'] }}</h2>
+            <div class="card-body"> 
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width:{{ stats['stats'][idx]['percentage'] }};" 
+                aria-valuenow="{{ stats['stats'][idx]['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
+              </div>
+              {% for song_str in stats['stats'][idx]['strings'] %}
+              <li>
+                {{ song_str }}
+              </li>
+              {% endfor %}
+            </div>
           </div>
-          {% for song_str in stat['strings'] %}
-          <li>
-            {{ song_str }}
-          </li>
-          {% endfor %}
+        </div>
+      {% else %}
+        <div class="col-md-6">
+          <div class="card">
+            <img src="{{ stats['stats'][idx]['url'] }}" class="card-img-top" height="300px"> 
+            <h2 class ="card-title">{{ stats['stats'][idx]['statname'] }}: {{ stats['stats'][idx]['percentage'] }}</h2>
+            <div class="card-body"> 
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width:{{ stats['stats'][idx]['percentage'] }};" aria-valuenow="{{ stats['stats'][idx]['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
+              </div>
+              {% for song_str in stats['stats'][idx]['strings'] %}
+              <li>
+                {{ song_str }}
+              </li>
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      {% endif %}
     {% endfor %}
 </body>
-
-
 </html>

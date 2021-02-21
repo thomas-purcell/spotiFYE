@@ -1,15 +1,20 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
-{% block header %}
-<h1>{% block title %}New Post{% endblock %}</h1>
-{% endblock %}
-
-{% block content %}
-<form method="post">
-  <label for="title">Title</label>
-  <input name="title" id="title" value="{{ request.form['title'] }}" required>
-  <label for="body">Body</label>
-  <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-  <input type="submit" value="Save">
-</form>
+{% block card_format %}
+<div class="col-md-6">
+  <div class="card">
+    <img src="{{ stat['url'] }}" class="card-img-top" height="300px"> 
+    <h2 class ="card-title">{{ stat['statname'] }}: {{ stat['percentage'] }}</h2>
+    <div class="card-body"> 
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width:{{ stat['percentage'] }};" aria-valuenow="{{ stat['percentage'] }}" aria-valuemin="0" aria-valuemax="100"></div> 
+      </div>
+      {% for song_str in stat['strings'] %}
+      <li>
+        {{ song_str }}
+      </li>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}
