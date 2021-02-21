@@ -15,6 +15,7 @@ def compare(p1, p2):
     for t1 in p1:
         total_genres += t1.total_genres
         for t2 in p2:
+            total_genres += t2.total_genres
             if t1.song == t2.song:
                 title_count += 1
                 if t1.song in titles.keys():
@@ -52,7 +53,6 @@ def compare(p1, p2):
                         genres[genre] += 1
                     else:
                         genres.update({genre: 1})
-            total_genres += t2.total_genres
 
     return title_count, artist_count, album_count, genre_count, total_genres, titles, artists, albums, genres, urls
 
@@ -77,7 +77,10 @@ def build_json(title_percent, artist_percent, album_percent, genre_percent, titl
         strings = "["
         for item in dicts[idx].keys():
             strings += "\"" + item + "\", "
-        strings = strings[0:len(strings) - 2] + "] "
+        if strings == "[":
+            strings = "[ ] "
+        else:
+            strings = strings[0:len(strings) - 2] + "] "
         result += "\"strings\": " + strings
         result += "}, "
     return result[0:len(result) - 2] + " ] }"
