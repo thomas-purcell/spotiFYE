@@ -39,13 +39,12 @@ def analyze_user():
     comparison_playlist = build_playlist(top_playlist, sp)
 
     title_count, artist_count, album_count, genre_count, total_genres, titles, artists, albums, genres, urls \
-        = compare(user_playlist, comparison_playlist)
+        = compare(comparison_playlist, user_playlist)
 
     title_percent = str(round(title_count / 50 * 100, 2)) + "%"
     artist_percent = str(round(artist_count / 50 * 100, 2)) + "%"
     album_percent = str(round(album_count / 50 * 100, 2)) + "%"
     genre_percent = str(round(genre_count / total_genres * 100, 2)) + "%"
-
     return build_json(title_percent, artist_percent, album_percent, genre_percent,
                       titles, artists, albums, genres, urls)
 
